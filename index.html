@@ -3,23 +3,324 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nexus - Where Innovation Meets Design</title>
-  <meta name="description" content="Transform your digital presence with cutting-edge solutions">
+  <title>DevOps Journey - Muhoho Jeremy's Path to Mastery</title>
+  <meta name="description" content="Your personalized DevOps learning journey and motivation hub">
 
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-  <meta property="og:title" content="Nexus - Where Innovation Meets Design">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="Nexus Landing Page">
+    .bg-animation {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#667eea">
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: 10%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .circle:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      bottom: 10%;
+      left: 20%;
+      animation-delay: 10s;
+    }
+
+    .circle:nth-child(4) {
+      width: 250px;
+      height: 250px;
+      top: 30%;
+      right: 20%;
+      animation-delay: 15s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(50px, -50px) scale(1.1); }
+      50% { transform: translate(-30px, 30px) scale(0.9); }
+      75% { transform: translate(40px, 20px) scale(1.05); }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5%;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.7;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 5% 4rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: #667eea;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #fff;
+      color: #667eea;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .learning-path {
+      padding: 4rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .path-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .path-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .path-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .path-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .path-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .path-card li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .path-card li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #ffd700;
+    }
+
+    .motivation {
+      padding: 4rem 5%;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .motivation-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .motivation-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      border-left: 4px solid #ffd700;
+      transition: all 0.3s;
+    }
+
+    .motivation-card:hover {
+      transform: translateX(10px);
+      border-left-width: 8px;
+    }
+
+    .motivation-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #ffd700;
+    }
+
+    .stats {
+      padding: 4rem 5%;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 15px;
+      transition: all 0.3s;
+    }
+
+    .stat:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 5%;
+      background: rgba(0, 0, 0, 0.3);
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .path-grid, .motivation-grid, .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -31,69 +332,194 @@
 </div>
 
 <nav>
-  <div class="logo">NEXUS</div>
+  <div class="logo">DEVOPS JOURNEY</div>
   <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#path">Learning Path</a></li>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#progress">Progress</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <h1>Where Innovation<br>Meets Design</h1>
-  <p class="subtitle">Transform your digital presence with cutting-edge solutions that inspire and engage</p>
+  <h1>Muhoho Jeremy's<br>DevOps Mastery Path</h1>
+  <p class="subtitle">Every expert was once a beginner. Your journey to DevOps excellence starts here.</p>
   <div class="cta-buttons">
-    <a href="#" class="btn btn-primary">Get Started</a>
-    <a href="#" class="btn btn-secondary">Learn More</a>
+    <a href="#path" class="btn btn-primary">Start Learning</a>
+    <a href="#motivation" class="btn btn-secondary">Get Motivated</a>
   </div>
 </section>
 
-<section class="features" id="features">
-  <h2 class="section-title">Why Choose Us</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <span class="feature-icon">⚡</span>
-      <h3>Lightning Fast</h3>
-      <p>Experience blazing speed with optimized performance that keeps your users engaged and satisfied.</p>
+<section class="learning-path" id="path">
+  <h2 class="section-title">Your DevOps Learning Roadmap</h2>
+  <div class="path-grid">
+    <div class="path-card">
+      <span class="path-icon">🐧</span>
+      <h3>Linux Foundation</h3>
+      <ul>
+        <li>Linux commands & shell scripting</li>
+        <li>File systems & permissions</li>
+        <li>Process management</li>
+        <li>Networking basics</li>
+        <li>System administration</li>
+      </ul>
     </div>
-    <div class="feature-card">
-      <span class="feature-icon">🎨</span>
-      <h3>Beautiful Design</h3>
-      <p>Stunning interfaces crafted with attention to detail that captivate and convert your audience.</p>
+
+    <div class="path-card">
+      <span class="path-icon">🐙</span>
+      <h3>Version Control</h3>
+      <ul>
+        <li>Git fundamentals</li>
+        <li>GitHub workflows</li>
+        <li>Branching strategies</li>
+        <li>Pull requests & code reviews</li>
+        <li>Git best practices</li>
+      </ul>
     </div>
-    <div class="feature-card">
-      <span class="feature-icon">🔒</span>
-      <h3>Secure & Reliable</h3>
-      <p>Enterprise-grade security ensuring your data and your users' privacy are always protected.</p>
+
+    <div class="path-card">
+      <span class="path-icon">🚀</span>
+      <h3>CI/CD Pipeline</h3>
+      <ul>
+        <li>GitHub Actions</li>
+        <li>Jenkins automation</li>
+        <li>Build & test automation</li>
+        <li>Deployment strategies</li>
+        <li>Pipeline optimization</li>
+      </ul>
+    </div>
+
+    <div class="path-card">
+      <span class="path-icon">☁️</span>
+      <h3>Cloud Platforms</h3>
+      <ul>
+        <li>AWS core services (EC2, S3, IAM)</li>
+        <li>Infrastructure as Code</li>
+        <li>Cloud networking</li>
+        <li>Security best practices</li>
+        <li>Cost optimization</li>
+      </ul>
+    </div>
+
+    <div class="path-card">
+      <span class="path-icon">🐳</span>
+      <h3>Containers</h3>
+      <ul>
+        <li>Docker fundamentals</li>
+        <li>Container orchestration</li>
+        <li>Kubernetes basics</li>
+        <li>Container security</li>
+        <li>Microservices architecture</li>
+      </ul>
+    </div>
+
+    <div class="path-card">
+      <span class="path-icon">📊</span>
+      <h3>Monitoring & Logging</h3>
+      <ul>
+        <li>Prometheus & Grafana</li>
+        <li>ELK Stack basics</li>
+        <li>Application monitoring</li>
+        <li>Alert management</li>
+        <li>Performance optimization</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="stats">
+<section class="motivation" id="motivation">
+  <h2 class="section-title">Daily Motivation</h2>
+  <div class="motivation-grid">
+    <div class="motivation-card">
+      <h3>💪 Consistency Over Perfection</h3>
+      <p>Learning 30 minutes daily beats cramming 5 hours once a week. Small steps lead to giant leaps.</p>
+    </div>
+
+    <div class="motivation-card">
+      <h3>🎯 Embrace Failure</h3>
+      <p>Every error is a lesson. Every bug you fix makes you stronger. Failure is not the opposite of success—it's part of it.</p>
+    </div>
+
+    <div class="motivation-card">
+      <h3>🔥 Build Real Projects</h3>
+      <p>Theory is important, but practice is essential. Deploy something every week, no matter how small.</p>
+    </div>
+
+    <div class="motivation-card">
+      <h3>🌟 Document Your Journey</h3>
+      <p>Write blogs, create tutorials, share your learnings. Teaching others reinforces your knowledge.</p>
+    </div>
+
+    <div class="motivation-card">
+      <h3>🤝 Community Matters</h3>
+      <p>Join DevOps communities, attend meetups, contribute to open source. Network and grow together.</p>
+    </div>
+
+    <div class="motivation-card">
+      <h3>⏰ Time Investment Pays Off</h3>
+      <p>DevOps skills are in high demand. Your dedication today creates opportunities tomorrow.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats" id="progress">
+  <h2 class="section-title">Your Journey Milestones</h2>
   <div class="stats-grid">
     <div class="stat">
-      <div class="stat-number">500+</div>
-      <div class="stat-label">Projects</div>
+      <div class="stat-number">365</div>
+      <div class="stat-label">Days of Learning</div>
     </div>
     <div class="stat">
-      <div class="stat-number">50K+</div>
-      <div class="stat-label">Users</div>
+      <div class="stat-number">100+</div>
+      <div class="stat-label">Skills to Master</div>
     </div>
     <div class="stat">
-      <div class="stat-number">99%</div>
-      <div class="stat-label">Satisfaction</div>
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Growth Potential</div>
     </div>
     <div class="stat">
-      <div class="stat-number">24/7</div>
-      <div class="stat-label">Support</div>
+      <div class="stat-number">1</div>
+      <div class="stat-label">Determined Learner</div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; 2025 Nexus. All rights reserved. Crafted with passion.</p>
+  <p>&copy; 2025 Muhoho Jeremy's DevOps Journey. Keep pushing forward! 🚀</p>
 </footer>
 
-<script src="js/app.js"></script>
+<script>
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Add entrance animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.path-card, .motivation-card, .stat').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
